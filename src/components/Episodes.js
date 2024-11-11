@@ -32,15 +32,6 @@ const featuredEpisodes = [
 function FeaturedEpisodes() {
   return (
     <section className="py-20 bg-gradient-to-tr from-blue-50 to-indigo-50 relative overflow-hidden">
-      {/* Decorative Background SVG */}
-      <svg
-        className="absolute top-0 right-0 w-1/2 h-full opacity-10 pointer-events-none animate-pulse"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 800 800"
-      >
-        <circle cx="400" cy="400" r="300" fill="url(#gradient)" />
-      </svg>
-
       <h2 className="text-4xl font-extrabold text-center text-indigo-900 mb-14">
         Featured Episodes
       </h2>
