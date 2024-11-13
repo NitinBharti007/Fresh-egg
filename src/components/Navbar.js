@@ -144,7 +144,7 @@ function Navbar() {
           className="md:hidden bg-gradient-to-r from-[#502461] via-[#6a2c7d] to-[#502461] p-6 mt-4 rounded-lg shadow-lg"
         >
           <motion.a
-            href="#home"
+            href="/"
             className="block text-white py-3 px-6 hover:bg-[#6a2c7d] rounded-lg transition duration-300"
             whileHover={{ scale: 1.1 }}
             initial={{ opacity: 0, y: -20 }}

@@ -1,6 +1,6 @@
 // components/Footer.js
 import React from "react";
-import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedin, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedin, FaEnvelope, FaPhoneAlt, FaHome, FaLocationArrow, FaAddressBook, FaMap, FaGlobe } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Footer() {
@@ -11,8 +11,8 @@ function Footer() {
         <div className="space-y-8">
           {/* Footer Header */}
           <motion.h3
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
             className="text-3xl font-bold text-center md:text-left leading-tight tracking-wide"
           >
@@ -24,63 +24,55 @@ function Footer() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.2 }}
-            className="text-lg space-y-4"
+            className="text-lg space-y-4 max-w-md leading-relaxed"
           >
             <p>
-              FreshEgg Podcast brings you the latest in creative conversations, thought-provoking insights, and stories that inspire. Stay connected with us to get the freshest perspectives on trending topics.
+              FreshEgg Podcast brings you the latest in creative conversations, thought-provoking insights, and inspiring stories. Stay connected for the freshest perspectives on trending topics.
             </p>
           </motion.div>
 
           {/* Footer Links */}
-          <motion.div
+          <motion.nav
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5 }}
-            className="text-lg space-y-2"
+            className="text-lg space-y-2 flex flex-col md:items-start"
+            aria-label="Footer Navigation"
           >
-            <a
-              href="#about"
-              className="block hover:text-indigo-200 transition duration-300"
-            >
+            <a href="#about" className="hover:text-indigo-200 transition duration-300">
               About Us
             </a>
-            <a
-              href="#services"
-              className="block hover:text-indigo-200 transition duration-300"
-            >
+            <a href="#services" className="hover:text-indigo-200 transition duration-300">
               Services
             </a>
-            <a
-              href="#contact"
-              className="block hover:text-indigo-200 transition duration-300"
-            >
+            <a href="#contact" className="hover:text-indigo-200 transition duration-300">
               Contact
             </a>
-            <a
-              href="#privacy"
-              className="block hover:text-indigo-200 transition duration-300"
-            >
+            <a href="#privacy" className="hover:text-indigo-200 transition duration-300">
               Privacy Policy
             </a>
-          </motion.div>
+          </motion.nav>
         </div>
 
         {/* Right Section */}
         <div className="space-y-8">
           {/* Contact Information */}
-          <motion.div
+          <motion.address
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            className="text-lg"
+            className="text-lg not-italic"
           >
             <p className="flex items-center">
-              <FaEnvelope className="mr-2" /> contact@freshegg.com
+              <FaEnvelope className="mr-2" /> connect@freshegg.in
             </p>
             <p className="flex items-center">
-              <FaPhoneAlt className="mr-2" /> +123 456 7890
+              <FaPhoneAlt className="mr-2" /> +91 9654234208
             </p>
-          </motion.div>
+            <p className="flex items-center">
+              <FaGlobe className="mr-2" /> B-36, 2nd Floor, Sector-67, Noida, Uttar Pradesh - 201301
+            </p>
+          </motion.address>
 
           {/* Social Media Icons */}
           <motion.div
@@ -94,6 +86,7 @@ function Footer() {
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
               className="text-blue-500 hover:text-blue-400 transition duration-300"
+              aria-label="Twitter"
             >
               <FaTwitter size={30} />
             </motion.a>
@@ -102,6 +95,7 @@ function Footer() {
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
               className="text-blue-700 hover:text-blue-600 transition duration-300"
+              aria-label="Facebook"
             >
               <FaFacebookF size={30} />
             </motion.a>
@@ -110,6 +104,7 @@ function Footer() {
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
               className="text-pink-500 hover:text-pink-400 transition duration-300"
+              aria-label="Instagram"
             >
               <FaInstagram size={30} />
             </motion.a>
@@ -118,6 +113,7 @@ function Footer() {
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
               className="text-blue-600 hover:text-blue-500 transition duration-300"
+              aria-label="LinkedIn"
             >
               <FaLinkedin size={30} />
             </motion.a>
