@@ -8,7 +8,7 @@ function Navbar() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
-    <nav className="bg-gradient-to-r from-[#502461] via-[#6a2c7d] to-[#502461] p-3 shadow-lg fixed w-full top-0 z-50">
+    <nav className="bg-gradient-to-r from-[#502461] via-[#502461] to-[#502461] p-3 shadow-lg fixed w-full top-0 z-50">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo with animation */}
         <motion.div
@@ -21,9 +21,9 @@ function Navbar() {
         >
           <a href="/" className="flex items-center">
             <img
-              src="fresh-eggs.png" // Path to your logo image (e.g., public/logo.png)
+              src="f-2.png" // Path to your logo image (e.g., public/logo.png)
               alt="Purple Logo"
-              className="h-16 w-auto transition-all duration-300 ease-in-out" // Increased height for better visibility
+              className="h-20 ml-7 w-auto transition-all duration-300 ease-in-out" // Increased height for better visibility
             />
           </a>
         </motion.div>
@@ -73,7 +73,7 @@ function Navbar() {
             transition={{ delay: 0.3, duration: 0.5 }}
           >
             About
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#641d7a] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
           </motion.a>
           <motion.a
             href="#contact"

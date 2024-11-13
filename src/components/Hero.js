@@ -17,7 +17,7 @@ function Hero() {
             transition={{ duration: 1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight"
           >
-            Discover a World of Stories on <span className="text-yellow-400">Freshegg</span>
+            Discover a World of Stories on <span className="text-yellow-400">Freshegg Media</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, x: -50 }}
