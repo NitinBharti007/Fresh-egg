@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -42,7 +43,9 @@ function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.1, duration: 0.5 }}
           >
-            Home
+            <Link to="/" className="text-white">
+              Home
+            </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
           </motion.a>
           <motion.a
@@ -57,7 +60,9 @@ function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            Episodes
+            <Link to="/episodes" className="text-white">
+              Episodes
+            </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
           </motion.a>
           <motion.a
@@ -72,7 +77,9 @@ function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            About
+            <Link to="/about" className="text-white">
+              About
+            </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#641d7a] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
           </motion.a>
           <motion.a
@@ -87,7 +94,9 @@ function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4, duration: 0.5 }}
           >
-            Contact
+            <Link to="/contact" className="text-white">
+              Contact
+            </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
           </motion.a>
         </div>
@@ -151,7 +160,9 @@ function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.3 }}
           >
-            Home
+            <Link to="/" className="text-white">
+              Home
+            </Link>
           </motion.a>
           <motion.a
             href="#episodes"
@@ -161,7 +172,9 @@ function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.3 }}
           >
-            Episodes
+            <Link to="/episodes" className="text-white">
+              Episodes
+            </Link>
           </motion.a>
           <motion.a
             href="#about"
@@ -171,7 +184,9 @@ function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.3 }}
           >
-            About
+            <Link to="/about" className="text-white">
+              About
+            </Link>
           </motion.a>
           <motion.a
             href="#contact"
@@ -181,7 +196,9 @@ function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.3 }}
           >
+            <Link to="/contact" className="text-white">
             Contact
+            </Link>
           </motion.a>
         </motion.div>
       )}
