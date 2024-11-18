@@ -22,9 +22,9 @@ function Navbar() {
         >
           <a href="/" className="flex items-center">
             <img
-              src="f-2.png" // Path to your logo image (e.g., public/logo.png)
+              src="f-4.png"
               alt="Purple Logo"
-              className="h-20 ml-7 w-auto transition-all duration-300 ease-in-out" // Increased height for better visibility
+              className="h-20 ml-7 w-auto transition-all duration-300 ease-in-out"
             />
           </a>
         </motion.div>
