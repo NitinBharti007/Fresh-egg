@@ -1,71 +1,68 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaPlay } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 
-const featuredEpisodes = [
+const youtubeShorts = [
   {
     id: 1,
-    title: "Episode 1 - The Future of AI",
-    description: "Exploring the possibilities of AI in our daily lives.",
-    date: "2024-10-01",
+    title: "Deepinder Goyal",
+    link: "https://www.youtube.com/embed/sOqe0yI-HdM",
   },
   {
     id: 2,
-    title: "Episode 2 - The Rise of Cryptocurrencies",
-    description: "Discussing the impact of blockchain and digital currencies.",
-    date: "2024-10-15",
+    title: "Kunal Bahl",
+    link: "https://www.youtube.com/embed/_bMGhJAFwD0",
   },
   {
     id: 3,
-    title: "Episode 3 - Sustainable Energy",
-    description: "Exploring the latest trends in renewable energy.",
-    date: "2024-10-20",
+    title: "Ashneer Grover",
+    link: "https://www.youtube.com/embed/0rXME2YH208",
   },
   {
     id: 4,
-    title: "Episode 4 - Innovations in Medicine",
-    description: "A deep dive into medical breakthroughs.",
-    date: "2024-11-01",
+    title: "Priyanka Chopra",
+    link: "https://www.youtube.com/embed/YYw3YqspjYg",
   },
 ];
 
-function FeaturedEpisodes() {
+function YouTubeShorts() {
   return (
-    <section className="py-20 bg-gradient-to-tr from-blue-50 to-indigo-50 relative overflow-hidden">
-      <h2 className="text-4xl font-extrabold text-center text-indigo-900 mb-14">
-        Featured Episodes
+    <section className="py-20 bg-gradient-to-tr from-gray-50 to-gray-200 relative overflow-hidden">
+      <h2 className="text-4xl font-extrabold text-center text-red-600 mb-14">
+        Trending YouTube Shorts
       </h2>
 
       <div className="container mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6">
-        {featuredEpisodes.map((episode) => (
+        {youtubeShorts.map((short) => (
           <motion.div
-            key={episode.id}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: episode.id * 0.2 }}
+            key={short.id}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: short.id * 0.2 }}
             whileHover={{
               scale: 1.05,
-              boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
-              backgroundColor: "#f7f7f7",
+              boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.2)",
             }}
-            className="p-6 bg-white shadow-lg rounded-xl transition duration-300 transform hover:shadow-2xl hover:bg-gradient-to-r hover:from-blue-200 hover:to-indigo-200 flex flex-col"
+            className="relative overflow-hidden rounded-xl shadow-lg bg-white hover:shadow-2xl"
           >
-            <div className="flex items-center mb-3">
-              <span className="text-gray-500 text-sm mr-3">{episode.date}</span>
-              <FaPlay className="text-blue-600 text-lg" />
+            {/* Video Embed */}
+            <div className="aspect-w-9 aspect-h-16 w-full">
+              <iframe
+                src={short.link}
+                title={short.title}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="w-full h-full rounded-t-xl"
+              ></iframe>
             </div>
-            <h3 className="text-2xl font-semibold mb-2 text-indigo-800">
-              {episode.title}
-            </h3>
-            <p className="text-gray-600 mb-6">{episode.description}</p>
-            
-            {/* Align button at the bottom */}
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              className="bg-blue-600 text-white py-2 px-5 rounded-full font-semibold shadow-md hover:bg-blue-700 transition-all duration-300 mt-auto"
-            >
-              Listen Now
-            </motion.button>
+
+            {/* Title and Icon */}
+            <div className="p-4 flex items-center justify-between">
+              <div className="flex items-center">
+                <FaYoutube className="text-red-600 text-3xl mr-2" />
+                <h3 className="text-gray-800 text-lg font-semibold">{short.title}</h3>
+              </div>
+            </div>
           </motion.div>
         ))}
       </div>
@@ -73,4 +70,4 @@ function FeaturedEpisodes() {
   );
 }
 
-export default FeaturedEpisodes;
+export default YouTubeShorts;

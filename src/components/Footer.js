@@ -1,6 +1,6 @@
 // components/Footer.js
 import React from "react";
-import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedin, FaEnvelope, FaPhoneAlt, FaHome, FaLocationArrow, FaAddressBook, FaMap, FaGlobe } from "react-icons/fa";
+import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedin, FaEnvelope, FaPhoneAlt, FaGlobe } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Footer() {
@@ -61,17 +61,20 @@ function Footer() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 2 }}
-            className="text-lg not-italic"
+            className="text-lg not-italic space-y-4"
           >
-            <p className="flex items-center">
-              <FaEnvelope className="mr-2" /> connect@freshegg.in
-            </p>
-            <p className="flex items-center">
-              <FaPhoneAlt className="mr-2" /> +91 9654234208
-            </p>
-            <p className="flex items-center">
-              <FaGlobe className="mr-2" /> B-36, 2nd Floor, Sector-67, Noida, Uttar Pradesh - 201301
-            </p>
+            <div className="flex items-center space-x-4">
+              <FaEnvelope className="text-xl" />
+              <span>connect@freshegg.in</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <FaPhoneAlt className="text-xl" />
+              <span>+91 9654234208</span>
+            </div>
+            <div className="flex items-center space-x-4">
+              <FaGlobe className="text-xl" />
+              <span>B-36, 2nd Floor, Sector-67, Noida, Uttar Pradesh - 201301</span>
+            </div>
           </motion.address>
 
           {/* Social Media Icons */}

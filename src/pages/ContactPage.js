@@ -1,5 +1,3 @@
-// components/ContactPage.js
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { FaEnvelope, FaPhone, FaGlobe } from "react-icons/fa";
@@ -8,7 +6,6 @@ function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    subject: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -27,23 +24,51 @@ function ContactPage() {
     setIsSubmitting(true);
     setSubmissionStatus("");
 
-    // Simulate form submission (you can replace this with actual form submission logic)
-    setTimeout(() => {
+    const form = new FormData(e.target);
+    form.append("access_key", "a9b87c35-d6ce-46ea-9643-1e80bac4b3bf"); // Replace with your Web3Forms API access key
+
+    const object = Object.fromEntries(form);
+    const json = JSON.stringify(object);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: json,
+      }).then((res) => res.json());
+
+      if (res.success) {
+        setIsSubmitting(false);
+        setSubmissionStatus("Thank you for your message! We will get back to you soon.");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setIsSubmitting(false);
+        setSubmissionStatus("Oops! Something went wrong. Please try again later.");
+      }
+    } catch (error) {
       setIsSubmitting(false);
-      setSubmissionStatus("Thank you for your message! We will get back to you soon.");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 2000);
+      setSubmissionStatus("Error: Unable to submit the form. Please try again later.");
+    }
   };
 
   return (
     <section className="relative bg-gradient-to-r from-teal-400 to-blue-500 py-24 px-8">
-      <div className="absolute inset-0 bg-cover bg-center opacity-30" style={{ backgroundImage: "url('https://media.istockphoto.com/id/1151378540/video/professional-microphone-against-changing-colorful-background.jpg?s=640x640&k=20&c=3atjHnsN3r9MbWQI7FMuMNp9PbKdsOeOPw0Gqv1nKBY=')" }}></div>
+      <div
+        className="absolute inset-0 bg-cover bg-center opacity-30"
+        style={{
+          backgroundImage:
+            "url('https://media.istockphoto.com/id/1151378540/video/professional-microphone-against-changing-colorful-background.jpg?s=640x640&k=20&c=3atjHnsN3r9MbWQI7FMuMNp9PbKdsOeOPw0Gqv1nKBY=')",
+        }}
+      ></div>
       <div className="relative container mx-auto z-10 text-white">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
-          className="text-5xl font-extrabold text-center mb-8 mt-5"
+          className="text-4xl lg:text-5xl font-extrabold text-center mb-8 mt-5"
         >
           Get in Touch with Us
         </motion.h2>
@@ -87,7 +112,9 @@ function ContactPage() {
                 className="flex items-center"
               >
                 <FaGlobe className="text-teal-600 text-2xl mr-4" />
-                <a href="https://freshegg.in/" className="text-teal-600 hover:text-teal-800">freshegg.in</a>
+                <a href="https://freshegg.in/" className="text-teal-600 hover:text-teal-800">
+                  freshegg.in
+                </a>
               </motion.li>
             </ul>
           </motion.div>
@@ -112,7 +139,9 @@ function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Your Name</label>
+                <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+                  Your Name
+                </label>
                 <input
                   type="text"
                   id="name"
@@ -129,7 +158,9 @@ function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
               >
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Your Email</label>
+                <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                  Your Email
+                </label>
                 <input
                   type="email"
                   id="email"
@@ -146,24 +177,9 @@ function ContactPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <label htmlFor="subject" className="block text-sm font-medium text-gray-700">Subject</label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-2 mt-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-600 text-gray-800"
-                  required
-                />
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-              >
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Your Message</label>
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+                  Your Message
+                </label>
                 <textarea
                   id="message"
                   name="message"
@@ -177,7 +193,8 @@ function ContactPage() {
 
               <motion.button
                 whileHover={{ scale: 1.05 }}
-                className="bg-teal-600 text-white py-3 px-6 rounded-full font-semibold shadow-md hover:bg-teal-700 transition-all duration-300"
+                className="bg-teal-600 text-white py-3 px-6 rounded-full font-semibold shadow-md hover:bg-teal-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                type="submit"
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
