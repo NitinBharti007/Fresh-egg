@@ -9,6 +9,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ContactPage from "./pages/ContactPage";
 import Testimonials from "./components/Testimonials";
+import WhoWeAre from "./components/Whovr";
 
 // ScrollToTop component
 function ScrollToTop() {
@@ -26,6 +27,7 @@ function HomePage() {
     <>
       <Hero />
       <Episodes />
+      <WhoWeAre/>
       <Testimonials/>
       <Contact />
     </>

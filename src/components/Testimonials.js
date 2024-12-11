@@ -2,7 +2,7 @@ import React from "react";
 
 function Testimonials() {
   return (
-    <section className="py-16 bg-gradient-to-r from-purple-500 to-blue-600 text-white">
+    <section className="py-16 bg-gradient-to-r from-[#ff7e5f] to-[#feb47b] text-white">
       <div className="container mx-auto text-center px-6">
         <h2 className="text-4xl font-extrabold text-white mb-12">
           What Our Listeners Are Saying
