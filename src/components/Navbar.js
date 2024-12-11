@@ -20,19 +20,19 @@ function Navbar() {
             transition: { yoyo: Infinity, duration: 0.5 },
           }}
         >
-          <a href="/" className="flex items-center">
+          <Link to={"/"} className="flex items-center">
+          
             <img
               src="f-4.png"
               alt="Purple Logo"
               className="h-20 ml-7 w-auto transition-all duration-300 ease-in-out"
             />
-          </a>
+          </Link>
         </motion.div>
 
         {/* Desktop Navbar Links */}
         <div className="hidden md:flex gap-12 items-center">
-          <motion.a
-            href="#home"
+          <motion.div
             className="text-white text-xl relative"
             whileHover={{
               scale: 1.2,
@@ -47,9 +47,8 @@ function Navbar() {
               Home
             </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
-          </motion.a>
-          <motion.a
-            href="#episodes"
+          </motion.div>
+          <motion.div
             className="text-white text-xl relative"
             whileHover={{
               scale: 1.2,
@@ -64,9 +63,8 @@ function Navbar() {
               Episodes
             </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
-          </motion.a>
-          <motion.a
-            href="#about"
+          </motion.div>
+          <motion.div
             className="text-white text-xl relative"
             whileHover={{
               scale: 1.2,
@@ -81,9 +79,8 @@ function Navbar() {
               About
             </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#641d7a] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
-          </motion.a>
-          <motion.a
-            href="#contact"
+          </motion.div>
+          <motion.div
             className="text-white text-xl relative"
             whileHover={{
               scale: 1.2,
@@ -98,7 +95,7 @@ function Navbar() {
               Contact
             </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
-          </motion.a>
+          </motion.div>
         </div>
 
         {/* Mobile Menu Button */}
@@ -152,8 +149,7 @@ function Navbar() {
           transition={{ duration: 0.5 }}
           className="md:hidden bg-gradient-to-r from-[#502461] via-[#6a2c7d] to-[#502461] p-6 mt-4 rounded-lg shadow-lg"
         >
-          <motion.a
-            href="/"
+          <motion.div
             className="block text-white py-3 px-6 hover:bg-[#6a2c7d] rounded-lg transition duration-300"
             whileHover={{ scale: 1.1 }}
             initial={{ opacity: 0, y: -20 }}
@@ -163,9 +159,8 @@ function Navbar() {
             <Link to="/" className="text-white">
               Home
             </Link>
-          </motion.a>
-          <motion.a
-            href="#episodes"
+          </motion.div>
+          <motion.div
             className="block text-white py-3 px-6 hover:bg-[#6a2c7d] rounded-lg transition duration-300"
             whileHover={{ scale: 1.1 }}
             initial={{ opacity: 0, y: -20 }}
@@ -175,9 +170,8 @@ function Navbar() {
             <Link to="/episodes" className="text-white">
               Episodes
             </Link>
-          </motion.a>
-          <motion.a
-            href="#about"
+          </motion.div>
+          <motion.div
             className="block text-white py-3 px-6 hover:bg-[#6a2c7d] rounded-lg transition duration-300"
             whileHover={{ scale: 1.1 }}
             initial={{ opacity: 0, y: -20 }}
@@ -187,9 +181,8 @@ function Navbar() {
             <Link to="/about" className="text-white">
               About
             </Link>
-          </motion.a>
-          <motion.a
-            href="#contact"
+          </motion.div>
+          <motion.div
             className="block text-white py-3 px-6 hover:bg-[#6a2c7d] rounded-lg transition duration-300"
             whileHover={{ scale: 1.1 }}
             initial={{ opacity: 0, y: -20 }}
@@ -199,7 +192,7 @@ function Navbar() {
             <Link to="/contact" className="text-white">
             Contact
             </Link>
-          </motion.a>
+          </motion.div>
         </motion.div>
       )}
     </nav>

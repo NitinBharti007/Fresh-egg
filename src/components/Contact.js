@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 function Contact() {
   return (
@@ -12,8 +11,8 @@ function Contact() {
         transition={{ duration: 1 }}
         className="text-center mb-12"
       >
-        <h2 className="text-5xl font-extrabold mb-4 text-[#f4a261]">Get in Touch with Us</h2>
-        <p className="text-xl max-w-2xl mx-auto text-[#e9c46a]">
+        <h2 className="text-4xl font-extrabold mb-4 text-[#f4a261]">Get in Touch with Us</h2>
+        <p className="text-lg max-w-2xl mx-auto text-[#e9c46a]">
           We’re always here to help! Reach out to us for any inquiries, support, or just to say hello. We’d love to hear from you.
         </p>
       </motion.div>
@@ -31,7 +30,7 @@ function Contact() {
           transition={{ duration: 0.6 }}
           type="text"
           placeholder="Your Name"
-          className="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#f4a261]"
+          className="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#f4a261] text-gray-900 placeholder-gray-500"
         />
         <motion.input
           initial={{ opacity: 0 }}
@@ -39,14 +38,14 @@ function Contact() {
           transition={{ duration: 0.8 }}
           type="email"
           placeholder="Your Email"
-          className="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#f4a261]"
+          className="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#f4a261] text-gray-900 placeholder-gray-500"
         />
         <motion.textarea
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
           placeholder="Your Message"
-          className="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#f4a261] h-36"
+          className="w-full px-4 py-3 rounded-lg bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[#f4a261] h-36 text-gray-900 placeholder-gray-500"
         ></motion.textarea>
         <motion.button
           whileHover={{ scale: 1.05 }}

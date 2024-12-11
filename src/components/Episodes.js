@@ -53,6 +53,7 @@ function YouTubeShorts() {
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="w-full h-full rounded-t-xl"
+                aria-label={`Watch ${short.title} on YouTube`}
               ></iframe>
             </div>
 

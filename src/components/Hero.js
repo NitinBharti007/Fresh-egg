@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -7,7 +8,7 @@ function Hero() {
       {/* Background Layers */}
       <div className="absolute inset-0 bg-gradient-to-tr from-indigo-900 via-purple-800 to-pink-700 opacity-30"></div>
       <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-t from-gray-900 via-transparent"></div>
-      
+
       <div className="relative container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-10">
         {/* Left Section */}
         <div className="text-left md:w-1/2 space-y-6">
@@ -17,7 +18,8 @@ function Hero() {
             transition={{ duration: 1 }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight"
           >
-            Discover a World of Stories on <span className="text-yellow-400">Freshegg Media</span>
+            Discover a World of Stories on{" "}
+            <span className="text-yellow-400">Freshegg Media</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, x: -50 }}
@@ -25,8 +27,9 @@ function Hero() {
             transition={{ duration: 1, delay: 0.3 }}
             className="text-base sm:text-lg text-gray-200 max-w-lg"
           >
-            Tune into fascinating stories, insights, and explorations in every episode.
-            Join us on a journey through culture, tech, and life, designed to inspire and educate.
+            Tune into fascinating stories, insights, and explorations in every
+            episode. Join us on a journey through culture, tech, and life,
+            designed to inspire and educate.
           </motion.p>
           <div className="flex gap-4 mt-6 flex-col sm:flex-row">
             <motion.button
@@ -35,7 +38,7 @@ function Hero() {
               transition={{ duration: 0.5 }}
               className="bg-yellow-400 text-indigo-900 py-3 px-8 rounded-lg font-semibold shadow-lg hover:bg-yellow-300 transition duration-300 w-full sm:w-auto"
             >
-              Start Listening
+              <Link to="/listening">Start Listening</Link>
             </motion.button>
             <motion.button
               initial={{ scale: 0.9 }}
@@ -43,7 +46,9 @@ function Hero() {
               transition={{ duration: 0.5 }}
               className="bg-gray-700 text-white py-3 px-8 rounded-lg font-semibold shadow-lg hover:bg-gray-600 transition duration-300 w-full sm:w-auto"
             >
-              View Episodes
+              <Link to="/episodes">
+                View Episodes
+              </Link>
             </motion.button>
           </div>
         </div>

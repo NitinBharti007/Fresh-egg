@@ -1,6 +1,15 @@
 // components/Footer.js
 import React from "react";
-import { FaTwitter, FaFacebookF, FaInstagram, FaLinkedin, FaEnvelope, FaPhoneAlt, FaGlobe } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import {
+  FaTwitter,
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedin,
+  FaEnvelope,
+  FaPhoneAlt,
+  FaLocationArrow,
+} from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Footer() {
@@ -27,7 +36,9 @@ function Footer() {
             className="text-lg space-y-4 max-w-md leading-relaxed"
           >
             <p>
-              FreshEgg Podcast brings you the latest in creative conversations, thought-provoking insights, and inspiring stories. Stay connected for the freshest perspectives on trending topics.
+              Freshegg Media brings you the latest in creative conversations,
+              thought-provoking insights, and inspiring stories. Stay connected
+              for the freshest perspectives on trending topics.
             </p>
           </motion.div>
 
@@ -39,18 +50,30 @@ function Footer() {
             className="text-lg space-y-2 flex flex-col md:items-start"
             aria-label="Footer Navigation"
           >
-            <a href="#about" className="hover:text-indigo-200 transition duration-300">
+            <Link
+              to="/"
+              className="hover:text-indigo-200 transition duration-300"
+            >
+              Home
+            </Link>
+            <Link
+              to="/episodes"
+              className="hover:text-indigo-200 transition duration-300"
+            >
+              Episodes
+            </Link>
+            <Link
+              to="/about"
+              className="hover:text-indigo-200 transition duration-300"
+            >
               About Us
-            </a>
-            <a href="#services" className="hover:text-indigo-200 transition duration-300">
-              Services
-            </a>
-            <a href="#contact" className="hover:text-indigo-200 transition duration-300">
+            </Link>
+            <Link
+              to="/contact"
+              className="hover:text-indigo-200 transition duration-300"
+            >
               Contact
-            </a>
-            <a href="#privacy" className="hover:text-indigo-200 transition duration-300">
-              Privacy Policy
-            </a>
+            </Link>
           </motion.nav>
         </div>
 
@@ -72,8 +95,10 @@ function Footer() {
               <span>+91 9654234208</span>
             </div>
             <div className="flex items-center space-x-4">
-              <FaGlobe className="text-xl" />
-              <span>B-36, 2nd Floor, Sector-67, Noida, Uttar Pradesh - 201301</span>
+              <FaLocationArrow className="text-xl" />
+              <span>
+                B-36, 2nd Floor, Sector-67, Noida, Uttar Pradesh - 201301
+              </span>
             </div>
           </motion.address>
 
@@ -94,7 +119,7 @@ function Footer() {
               <FaTwitter size={30} />
             </motion.a>
             <motion.a
-              href="https://facebook.com"
+              href="https://www.facebook.com/fresheggmedia"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
               className="text-blue-700 hover:text-blue-600 transition duration-300"
@@ -103,7 +128,7 @@ function Footer() {
               <FaFacebookF size={30} />
             </motion.a>
             <motion.a
-              href="https://instagram.com"
+              href="https://www.instagram.com/fresheggmedia/"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
               className="text-pink-500 hover:text-pink-400 transition duration-300"
@@ -112,7 +137,7 @@ function Footer() {
               <FaInstagram size={30} />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href="https://www.linkedin.com/company/fresheggmedia/"
               whileHover={{ scale: 1.2 }}
               whileTap={{ scale: 0.95 }}
               className="text-blue-600 hover:text-blue-500 transition duration-300"
@@ -131,7 +156,10 @@ function Footer() {
         transition={{ duration: 2.5 }}
         className="text-lg text-center mt-12 border-t-2 pt-4"
       >
-        <p>&copy; {new Date().getFullYear()} FreshEgg Podcast. All Rights Reserved.</p>
+        <p>
+          &copy; {new Date().getFullYear()} Freshegg Media. All Rights
+          Reserved.
+        </p>
       </motion.div>
     </footer>
   );
