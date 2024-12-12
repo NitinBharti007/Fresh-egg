@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import CEO from "../assets/CEO.png";
 
 function About() {
   return (
@@ -81,7 +82,7 @@ function About() {
             className="flex-1"
           >
             <img
-              src="CEO.png"
+              src={CEO}
               alt="CEO"
               className="rounded-xl shadow-lg w-full md:w-2/4 mx-auto"
             />
@@ -177,7 +178,6 @@ function About() {
           >
             Get in Touch
           </Link>
-          <a></a>
         </motion.div>
       </section>
     </div>

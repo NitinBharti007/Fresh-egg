@@ -1,4 +1,7 @@
 import React from "react";
+import Monika from "../assets/Monika.jpeg"
+import Ayushi from "../assets/Ayushi.jpeg"
+import Sunita from "../assets/Sunita.jpeg"
 
 function Testimonials() {
   return (
@@ -12,7 +15,7 @@ function Testimonials() {
           <div className="bg-gray-100 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="flex justify-center mb-4">
               <img
-                src="Monika.jpeg"
+                src={Monika}
                 alt="User 1"
                 className="w-16 h-16 rounded-full object-cover"
               />
@@ -27,7 +30,7 @@ function Testimonials() {
           <div className="bg-gray-100 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="flex justify-center mb-4">
               <img
-                src="Ayushi.jpeg"
+                src={Ayushi}
                 alt="User 2"
                 className="w-16 h-16 rounded-full object-cover"
               />
@@ -42,7 +45,7 @@ function Testimonials() {
           <div className="bg-gray-100 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="flex justify-center mb-4">
               <img
-                src="Sunita.jpeg"
+                src={Sunita}
                 alt="User 3"
                 className="w-16 h-16 rounded-full object-cover"
               />

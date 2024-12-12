@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import logo from "../assets/f-4.png"
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -23,7 +24,7 @@ function Navbar() {
           <Link to={"/"} className="flex items-center">
           
             <img
-              src="f-4.png"
+              src={logo}
               alt="Purple Logo"
               className="h-20 ml-7 w-auto transition-all duration-300 ease-in-out"
             />
