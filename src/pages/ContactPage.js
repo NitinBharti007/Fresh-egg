@@ -25,7 +25,7 @@ function ContactPage() {
     setSubmissionStatus("");
 
     const form = new FormData(e.target);
-    form.append("access_key", "a9b87c35-d6ce-46ea-9643-1e80bac4b3bf"); // Replace with your Web3Forms API access key
+    form.append("access_key", "c2993e71-217e-4e5e-a472-de11ab15b1c3");
 
     const object = Object.fromEntries(form);
     const json = JSON.stringify(object);

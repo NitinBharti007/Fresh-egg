@@ -30,7 +30,7 @@ const youtubeShorts = [
 function YouTubeShorts() {
   return (
     <section className="py-20 bg-gradient-to-tr from-gray-50 to-gray-200 relative overflow-hidden">
-      <h2 className="text-4xl font-extrabold text-center text-red-600 mb-14 mt-16">
+      <h2 className="text-4xl font-extrabold text-center text-black mb-14 mt-16">
         Trending YouTube Shorts
       </h2>
 

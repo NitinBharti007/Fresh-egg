@@ -37,7 +37,7 @@ function WhoWeAre() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-wrap justify-center lg:justify-start gap-4"
           >
-            <button className="bg-indigo-600 text-white py-3 px-6 rounded-lg font-medium hover:bg-indigo-500 shadow-md">
+            <button className="bg-[#f4a261] text-white py-3 px-6 rounded-lg font-medium hover:bg-[#e9c46a] transition shadow-md">
               <Link to="/about" className="text-white">
                 Learn More About Us
               </Link>

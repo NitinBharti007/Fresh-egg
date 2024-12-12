@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { FaInstagram, FaYoutube } from "react-icons/fa";  // Importing Instagram and YouTube icons
 
 function Hero() {
   return (
@@ -31,25 +31,33 @@ function Hero() {
             episode. Join us on a journey through culture, tech, and life,
             designed to inspire and educate.
           </motion.p>
-          <div className="flex gap-4 mt-6 flex-col sm:flex-row">
-            <motion.button
+          <div className="flex gap-4 mt-6 flex-col sm:flex-row items-center justify-center sm:justify-start">
+            {/* Instagram Button */}
+            <motion.a
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="bg-yellow-400 text-indigo-900 py-3 px-8 rounded-lg font-semibold shadow-lg hover:bg-yellow-300 transition duration-300 w-full sm:w-auto"
+              href="https://www.instagram.com/fresheggmedia/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-yellow-400 text-indigo-900 p-5 rounded-3xl shadow-xl hover:shadow-2xl hover:bg-yellow-300 duration-300 w-20 h-16 flex items-center justify-center transform transition-all"
+              aria-label="Instagram"
             >
-              <Link to="/listening">Start Listening</Link>
-            </motion.button>
-            <motion.button
+              <FaInstagram className="text-4xl" />
+            </motion.a>
+            {/* YouTube Button */}
+            <motion.a
               initial={{ scale: 0.9 }}
               animate={{ scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="bg-gray-700 text-white py-3 px-8 rounded-lg font-semibold shadow-lg hover:bg-gray-600 transition duration-300 w-full sm:w-auto"
+              href="https://youtube.com/@fresheggmedia?si=c5amPZVESzsWDH2o"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-red-600 text-white p-5 rounded-3xl shadow-xl hover:shadow-2xl hover:bg-red-500 duration-300 w-20 h-16 flex items-center justify-center transform transition-all"
+              aria-label="YouTube"
             >
-              <Link to="/episodes">
-                View Episodes
-              </Link>
-            </motion.button>
+              <FaYoutube className="text-4xl" />
+            </motion.a>
           </div>
         </div>
 

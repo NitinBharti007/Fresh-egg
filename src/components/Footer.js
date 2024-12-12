@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-indigo-600 to-purple-700 py-16 text-white">
+    <footer className="bg-gradient-to-r from-[#502461] via-[#502461] to-[#502461] py-16 text-white">
       <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 px-6">
         {/* Left Section */}
         <div className="space-y-8">
