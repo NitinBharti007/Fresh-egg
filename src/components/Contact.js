@@ -8,7 +8,7 @@ function BecomePartOfCommunity() {
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending....");
-    setLoading(true);  // Show loading state
+    setLoading(true);
     const formData = new FormData(event.target);
 
     formData.append("access_key", "c2993e71-217e-4e5e-a472-de11ab15b1c3");
@@ -29,11 +29,11 @@ function BecomePartOfCommunity() {
     } catch (error) {
       setResult("An error occurred. Please try again.");
     } finally {
-      setLoading(false);  // Hide loading state
-      event.target.reset(); // Reset form fields
+      setLoading(false);
+      event.target.reset();
       setTimeout(() => {
-        setResult("");  // Hide the result message after 4 seconds
-      }, 4000); // 4 seconds delay
+        setResult("");
+      }, 4000);
     }
   };
 
@@ -67,7 +67,7 @@ function BecomePartOfCommunity() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           type="email"
-          name="email"  // Field for email
+          name="email"
           placeholder="Your Email"
           required
           aria-label="Email Address"

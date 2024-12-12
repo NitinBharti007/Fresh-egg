@@ -24,7 +24,7 @@ function ScrollToTop() {
     window.scrollTo(0, 0);
   }, [location]);
 
-  return null; // This component doesn't render anything
+  return null;
 }
 
 function HomePage() {

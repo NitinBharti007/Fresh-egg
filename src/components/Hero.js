@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaInstagram, FaYoutube } from "react-icons/fa";  // Importing Instagram and YouTube icons
+import { FaInstagram, FaYoutube } from "react-icons/fa";
 
 function Hero() {
   return (
