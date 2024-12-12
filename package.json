@@ -1,5 +1,6 @@
 {
   "name": "fresh-egg",
+  "homepage": "https://www.freshegg.in/freshegg",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
