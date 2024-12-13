@@ -1,13 +1,6 @@
-# Ensure proper serving of static files
 <IfModule mod_rewrite.c>
-  Options -MultiViews
   RewriteEngine On
-
-  # Serve static files directly
-  RewriteCond %{REQUEST_FILENAME} -f
-  RewriteRule ^ - [L]
-
-  # Redirect all other routes to index.html
+  RewriteBase /freshegg/
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^ index.html [L]
