@@ -1,7 +1,7 @@
 import React from "react";
-import Monika from "../assets/Monika.jpeg"
-import Ayushi from "../assets/Ayushi.jpeg"
-import Sunita from "../assets/Sunita.jpeg"
+import Monika from "../assets/Monika.jpeg";
+import Ayushi from "../assets/Ayushi.jpeg";
+import Sunita from "../assets/Sunita.jpeg";
 
 function Testimonials() {
   return (
@@ -10,14 +10,14 @@ function Testimonials() {
         <h2 className="text-4xl font-extrabold text-black mb-12">
           What Our Listeners Are Saying
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Testimonial 1 */}
           <div className="bg-gray-100 p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300">
             <div className="flex justify-center mb-4">
               <img
                 src={Monika}
                 alt="User 1"
-                className="w-16 h-16 rounded-full object-cover"
+                className="w-20 h-20 rounded-full object-cover border-4 border-gray-200"
               />
             </div>
             <p className="text-gray-800 italic mb-4">
@@ -32,7 +32,7 @@ function Testimonials() {
               <img
                 src={Ayushi}
                 alt="User 2"
-                className="w-16 h-16 rounded-full object-cover"
+                className="w-20 h-20 rounded-full object-cover border-4 border-gray-200"
               />
             </div>
             <p className="text-gray-800 italic mb-4">
@@ -47,7 +47,7 @@ function Testimonials() {
               <img
                 src={Sunita}
                 alt="User 3"
-                className="w-16 h-16 rounded-full object-cover"
+                className="w-20 h-20 rounded-full object-cover border-4 border-gray-200"
               />
             </div>
             <p className="text-gray-800 italic mb-4">
