@@ -7,7 +7,7 @@ function YouTubeShorts() {
   const [loading, setLoading] = useState(false);
 
   const API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
-  const CHANNEL_ID = "UC25ghOzZBpdI15kbTGpOU0Q";
+  const CHANNEL_ID = process.env.REACT_APP_YOUTUBE_CHANNEL_ID;
 
   // Fetch all videos using pagination
   const fetchAllVideos = useCallback(async () => {
