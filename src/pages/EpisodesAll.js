@@ -1,33 +1,39 @@
 // components/YouTubeShorts.js
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { FaYoutube } from "react-icons/fa";
 
-const youtubeShorts = [
-  {
-    id: 1,
-    title: "Deepinder Goyal",
-    link: "https://www.youtube.com/embed/sOqe0yI-HdM",
-  },
-  {
-    id: 2,
-    title: "Kunal Bahl",
-    link: "https://www.youtube.com/embed/_bMGhJAFwD0",
-  },
-  {
-    id: 3,
-    title: "Ashneer Grover",
-    link: "https://www.youtube.com/embed/0rXME2YH208",
-  },
-  {
-    id: 4,
-    title: "Priyanka Chopra",
-    link: "https://www.youtube.com/embed/YYw3YqspjYg",
-  },
-];
-
 function YouTubeShorts() {
+  const [shorts, setShorts] = useState([]);
+
+  const API_KEY = "AIzaSyDz632coRWs-chDzeDUO4S48LNM__i98jw";
+  const CHANNEL_ID = "UC25ghOzZBpdI15kbTGpOU0Q";
+
+  // Fetch Shorts from YouTube API
+  const fetchShorts = async () => {
+    try {
+      const searchUrl = `https://www.googleapis.com/youtube/v3/search?key=${API_KEY}&channelId=${CHANNEL_ID}&part=snippet&type=video&order=date&maxResults=10`;
+      const response = await fetch(searchUrl);
+      const data = await response.json();
+
+      // Filter results for Shorts based on video duration if needed
+      const fetchedShorts = data.items.map((item, index) => ({
+        id: index + 1,
+        title: item.snippet.title,
+        link: `https://www.youtube.com/embed/${item.id.videoId}`,
+      }));
+
+      setShorts(fetchedShorts);
+    } catch (error) {
+      console.error("Error fetching YouTube Shorts:", error);
+    }
+  };
+
+  useEffect(() => {
+    fetchShorts();
+  }, []);
+
   return (
     <section className="py-20 bg-gradient-to-tr from-gray-50 to-gray-200 relative overflow-hidden">
       <h2 className="text-4xl font-extrabold text-center text-black mb-14 mt-16">
@@ -35,7 +41,7 @@ function YouTubeShorts() {
       </h2>
 
       <div className="container mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6">
-        {youtubeShorts.map((short) => (
+        {shorts.map((short) => (
           <motion.div
             key={short.id}
             initial={{ opacity: 0, scale: 0.8 }}
@@ -63,7 +69,10 @@ function YouTubeShorts() {
             <div className="p-4 flex items-center justify-between">
               <div className="flex items-center">
                 <FaYoutube className="text-red-600 text-3xl mr-2" />
-                <h3 className="text-gray-800 text-lg font-semibold">{short.title}</h3>
+                <h3 className="text-gray-800 text-lg font-semibold">
+                  {short.title.split(" ").slice(0, 3).join(" ")}
+                  {short.title.split(" ").length > 4 && "..."}
+                </h3>
               </div>
             </div>
           </motion.div>
