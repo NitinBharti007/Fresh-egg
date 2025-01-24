@@ -92,7 +92,7 @@ function Navbar() {
             transition={{ delay: 0.1, duration: 0.5 }}
           >
             <Link to="/service" className="text-white">
-              Services
+              Ecommerce
             </Link>
             <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
           </motion.div>
@@ -207,7 +207,7 @@ function Navbar() {
             transition={{ delay: 0.2, duration: 0.3 }}
           >
             <Link to="/episodes" className="text-white">
-              Services
+              Ecommerce
             </Link>
           </motion.div>
           <motion.div

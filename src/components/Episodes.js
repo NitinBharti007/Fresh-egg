@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaYoutube } from "react-icons/fa";
+import { Link } from "react-router-dom";  // Import Link from react-router-dom
 
 const youtubeShorts = [
   {
@@ -27,12 +28,63 @@ const youtubeShorts = [
 
 function YouTubeShorts() {
   return (
-    <section className="py-20 bg-gradient-to-tr from-gray-50 to-gray-200 relative overflow-hidden">
-      <h2 className="text-4xl font-extrabold text-center text-black mb-14">
+    <section className="py-5 bg-gradient-to-tr from-gray-50 to-gray-200 relative overflow-hidden">
+      {/* Marquee Effect with Scrollable Link */}
+      <div className="marquee-container">
+        <div className="marquee-content">
+          <Link
+            to="/ecommerce"
+            className="text-2xl text-yellow-400 font-semibold hover:underline"
+          >
+            E-commerce Services: A Journey of Exploration !!
+          </Link>
+          <span className="mx-4 text-2xl text-gray-800 font-semibold">|</span>
+          <Link
+            to="/ecommerce"
+            className="text-2xl text-blue-500 hover:text-blue-700 hover:underline"
+          >
+            Click Me
+          </Link>
+        </div>
+      </div>
+
+      {/* CSS for marquee effect */}
+      <style jsx>{`
+        .marquee-container {
+          width: 100%;
+          overflow: hidden;
+          position: relative;
+          padding: 10px 0;
+          margin-top: 10px;
+        }
+
+        .marquee-content {
+          display: flex;
+          white-space: nowrap;
+          animation: marquee 10s linear infinite;
+          font-size: 32px;
+          font-weight: bold;
+          letter-spacing: 2px;
+        }
+
+        .marquee-content:hover {
+          animation-play-state: paused;  /* Pause animation on hover */
+        }
+
+        @keyframes marquee {
+          0% {
+            transform: translateX(100%);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+      `}</style>
+      <h2 className="text-4xl font-extrabold text-center text-black mb-14 mt-5">
         Trending YouTube Shorts
       </h2>
 
-      <div className="container mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6">
+      <div className="container mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 mb-10">
         {youtubeShorts.map((short) => (
           <motion.div
             key={short.id}
@@ -67,6 +119,8 @@ function YouTubeShorts() {
           </motion.div>
         ))}
       </div>
+
+      
     </section>
   );
 }
