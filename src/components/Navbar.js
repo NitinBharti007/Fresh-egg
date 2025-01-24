@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logo from "../assets/f-4.png"
+import logo from "../assets/f-4.png";
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -22,7 +22,6 @@ function Navbar() {
           }}
         >
           <Link to={"/"} className="flex items-center">
-          
             <img
               src={logo}
               alt="Purple Logo"
@@ -58,6 +57,22 @@ function Navbar() {
             }}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.3, duration: 0.5 }}
+          >
+            <Link to="/about" className="text-white">
+              About
+            </Link>
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#641d7a] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
+          </motion.div>
+          <motion.div
+            className="text-white text-xl relative"
+            whileHover={{
+              scale: 1.2,
+              textShadow: "0px 0px 10px rgba(255,255,255,0.8)",
+              transition: { duration: 0.3 },
+            }}
+            initial={{ opacity: 0, x: -10 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <Link to="/episodes" className="text-white">
@@ -74,13 +89,14 @@ function Navbar() {
             }}
             initial={{ opacity: 0, x: -10 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
+            transition={{ delay: 0.1, duration: 0.5 }}
           >
-            <Link to="/about" className="text-white">
-              About
+            <Link to="/service" className="text-white">
+              Services
             </Link>
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#641d7a] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
+            <span className="absolute bottom-0 left-0 w-full h-1 bg-[#6a2c7d] transform scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
           </motion.div>
+
           <motion.div
             className="text-white text-xl relative"
             whileHover={{
@@ -166,17 +182,6 @@ function Navbar() {
             whileHover={{ scale: 1.1 }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.3 }}
-          >
-            <Link to="/episodes" className="text-white">
-              Episodes
-            </Link>
-          </motion.div>
-          <motion.div
-            className="block text-white py-3 px-6 hover:bg-[#6a2c7d] rounded-lg transition duration-300"
-            whileHover={{ scale: 1.1 }}
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.3 }}
           >
             <Link to="/about" className="text-white">
@@ -188,10 +193,32 @@ function Navbar() {
             whileHover={{ scale: 1.1 }}
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
+          >
+            <Link to="/episodes" className="text-white">
+              Episodes
+            </Link>
+          </motion.div>
+          <motion.div
+            className="block text-white py-3 px-6 hover:bg-[#6a2c7d] rounded-lg transition duration-300"
+            whileHover={{ scale: 1.1 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, duration: 0.3 }}
+          >
+            <Link to="/episodes" className="text-white">
+              Services
+            </Link>
+          </motion.div>
+          <motion.div
+            className="block text-white py-3 px-6 hover:bg-[#6a2c7d] rounded-lg transition duration-300"
+            whileHover={{ scale: 1.1 }}
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.3 }}
           >
             <Link to="/contact" className="text-white">
-            Contact
+              Contact
             </Link>
           </motion.div>
         </motion.div>

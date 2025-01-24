@@ -15,6 +15,7 @@ import Footer from "./components/Footer";
 import ContactPage from "./pages/ContactPage";
 import Testimonials from "./components/Testimonials";
 import WhoWeAre from "./components/Whovr";
+import ServicePage from "./pages/ServicePage";
 
 // ScrollToTop component
 function ScrollToTop() {
@@ -50,6 +51,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/episodes" element={<EpisodesAll />} />
             <Route path="/about" element={<About />} />
+            <Route path="/service" element={<ServicePage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>
         </main>
