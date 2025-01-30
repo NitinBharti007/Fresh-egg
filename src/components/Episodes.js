@@ -80,10 +80,9 @@ function YouTubeShorts() {
           }
         }
       `}</style>
-      <h2 className="text-4xl font-extrabold text-center text-black mb-14 mt-5">
+      <h2 className="text-4xl font-extrabold text-center text-black mb-14 mt-5 ">
         Trending YouTube Shorts
       </h2>
-
       <div className="container mx-auto grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 mb-10">
         {youtubeShorts.map((short) => (
           <motion.div

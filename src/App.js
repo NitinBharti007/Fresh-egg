@@ -16,6 +16,7 @@ import ContactPage from "./pages/ContactPage";
 import Testimonials from "./components/Testimonials";
 import WhoWeAre from "./components/Whovr";
 import ServicePage from "./pages/ServicePage";
+import WhatMakesUsDifferent from "./components/Different";
 
 // ScrollToTop component
 function ScrollToTop() {
@@ -33,6 +34,7 @@ function HomePage() {
     <>
       <Hero />
       <Episodes />
+      <WhatMakesUsDifferent/>
       <WhoWeAre />
       <Testimonials />
       <Contact />
